@@ -23,11 +23,11 @@ jobs:
         env: 
           PYTHONPATH: ${{ github.workspace }}
 
+      - name: Print secret value
+        run: echo "Message ${{ secrets.MY_MESSAGE }}"
+
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: .
-
-      - name: Print secret value
-        run: echo "Message: ${{ secrets.MY_MESSAGE }}"
